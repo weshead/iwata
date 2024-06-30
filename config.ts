@@ -1,4 +1,4 @@
-interface ICONFIG {
+const cfg: {
     APP_UUID: string;
     SOURCE: {
         CC: string[];
@@ -12,9 +12,7 @@ interface ICONFIG {
         GLIDERS: string[];
     };
     TOKEN: string;
-}
-
-const CONFIG: ICONFIG = {
+} = {
     APP_UUID: 'iwata',
     SOURCE: {
         CC: ['150', '200', 'Mirror'],
@@ -33,4 +31,4 @@ const CONFIG: ICONFIG = {
     TOKEN: process.env.TOKEN!,
 };
 
-export { CONFIG };
+export { cfg };

@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
 // const Yml = require('js-yaml');
 const nodeExternals = require('webpack-node-externals');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = {
     devtool: process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'cheap-module-source-map', // hidden-source-map | source-map | cheap-module-source-map
@@ -34,6 +35,7 @@ module.exports = {
                 { from: 'src/imgs', to: '' }
             ]
         }),
+        new NodePolyfillPlugin(),
     ],
     resolve: {
         alias: {

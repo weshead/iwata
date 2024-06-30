@@ -1,5 +1,5 @@
 // CFG
-import { CONFIG } from '../../config';
+import { cfg } from '../../config';
 
 class Helpers {
     /** Log: message
@@ -26,7 +26,7 @@ class Helpers {
             milliseconds: String(now.getMilliseconds()).padStart(4, '0'),
         };
         const timestamp = `${year}-${month}-${day}-${hours}:${minutes}:${seconds}:${milliseconds}`;
-        return `#${CONFIG.APP_UUID} ${timestamp}: ${message}`;
+        return `#${cfg.APP_UUID} ${timestamp}: ${message}`;
     }
 
     public static getRandomValueFromArray<T>(array: T[]): number {
